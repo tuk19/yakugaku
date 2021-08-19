@@ -1,11 +1,16 @@
 <div class="top_main">
-  <div class="user_login">
-    <%= link_to "ログイン", new_user_session_path %>
-  </div>
-  <div class="user_registrations">
-    <%= link_to "新規登録", new_user_registration_path %>
+  <div class="user_authentication">
+    <div class="user_login">
+      <%= link_to "ログイン", new_user_session_path %>
+    </div>
+    <div class="user_registrations">
+      <%= link_to "新規登録", new_user_registration_path %>
+    </div>
   </div>
 </div>
 <div class="sample_q">
   <p>サンプル問題</p>
+</div>
+<div class="admin_authentication">
+  <%= link_to "管理者ログイン", new_admin_sesstion_path %>
 </div>
