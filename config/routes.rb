@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'admins/index'
-  devise_for :admins
-  devise_for :users
   root to: 'tops#index'
+  devise_for :admins
+  get 'admins/index'
+  devise_for :users
   get 'users/index'
+  resources :questions
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
