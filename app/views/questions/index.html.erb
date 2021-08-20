@@ -1,7 +1,8 @@
 <div class="questions_index_container">
   <div class="questions_index_main">
-    <% if @questions == nil %>
+    <% if @questions.count == 0 %>
       <p>問題はありません</p>
+    <% else %>
       <% @questions.each do |question| %>
         <div>
           <p>問題<%= question.number %></p>
