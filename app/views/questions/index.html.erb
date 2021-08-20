@@ -1,2 +1,12 @@
-<h1>Questions#index</h1>
-<p>Find me in app/views/questions/index.html.erb</p>
+<div class="questions_index_container">
+  <div class="questions_index_main">
+    <% if @questions == nil %>
+      <p>問題はありません</p>
+      <% @questions.each do |question| %>
+        <div>
+          <p>問題<%= question.number %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
