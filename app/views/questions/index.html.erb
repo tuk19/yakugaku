@@ -5,9 +5,14 @@
     <% else %>
       <% @questions.each do |question| %>
         <div>
-          <p>問題<%= question.number %></p>
+          <%= link_to question_path(question.id) do %>
+            <p>問題<%= question.number %></p>
+          <% end %>
         </div>
       <% end %>
     <% end %>
   </div>
+</div>
+<div class="link_to_top">
+  <%= link_to "トップへ", root_path %>
 </div>
