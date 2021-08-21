@@ -1,0 +1,7 @@
+<%= @question.statement %>
+<%= @answers.each do |answer| %>
+<p><%= answer.answer %></p>
+<% end %>
+<div class="link_index">
+  <%= link_to "戻る", questions_path %>
+</div>
