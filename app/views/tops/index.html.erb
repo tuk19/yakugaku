@@ -7,6 +7,7 @@
   <% elsif admin_signed_in? %>
     <div class="admin_body">
       <p>管理者としてログインしています</p>
+      <%= link_to "問題を作成する", new_question_path %>
       <p><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></p>
     </div>
   <% else %>
@@ -23,7 +24,7 @@
 <div class="sample_q">
   <p>サンプル問題</p>
 </div>
-<% unless admin_signed_in? %>
+<% unless user_signed_in? or admin_signed_in? %>
   <div class="admin_authentication">
     <%= link_to "管理者ログイン", new_admin_session_path %>
   </div>
