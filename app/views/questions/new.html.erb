@@ -1,0 +1,50 @@
+<div class="questions_new_container">
+  <h2>問題作成</h2>
+  <h3>問題<%= @number %></h3>
+  <div class="questions_new_main">
+    <%= form_with model: @register_questions_form, url: questions_path do |f| %>
+      <%= f.hidden_field :number, value: @number %>
+      <div class="difficulty_form">
+        <%= f.label :difficulty, "難しさを5段階で選択" %>
+        <p>1<%= f.radio_button :difficulty, 1 %></p>
+        <p>2<%= f.radio_button :difficulty, 2 %></p>
+        <p>3<%= f.radio_button :difficulty, 3 %></p>
+        <p>4<%= f.radio_button :difficulty, 4 %></p>
+        <p>5<%= f.radio_button :difficulty, 5 %></p>
+      </div>
+      <div class="one_answer_form">
+        <%= f.label :one_answer, "答えが一つの場合は選択" %>
+        <%= f.radio_button :one_answer, "true" %>
+      </div>
+      <div class="statement_form">
+        <%= f.label :statement, "問題文" %>
+        <%= f.text_area :statement %>
+      </div>
+      <div>
+        <%= f.label :answer1, "答え1" %>
+        <%= f.text_field :answer1 %>
+        <%= f.label :correct1, "正解にチェック" %>
+        <%= f.check_box :correct1, as: :boolean %>
+      </div>
+      <div>
+        <%= f.label :answer2, "答え2" %>
+        <%= f.text_field :answer2 %>
+        <%= f.label :correct2, "正解にチェック" %>
+        <%= f.check_box :correct2, as: :boolean %>
+      </div>
+      <div>
+        <%= f.label :answer3, "答え3" %>
+        <%= f.text_field :answer3 %>
+        <%= f.label :correct3, "正解にチェック" %>
+        <%= f.check_box :correct3, as: :boolean %>
+      </div>
+      <div>
+        <%= f.label :answer4, "答え4" %>
+        <%= f.text_field :answer4 %>
+        <%= f.label :correct4, "正解にチェック" %>
+        <%= f.check_box :correct4, as: :boolean %>
+      </div>
+      <%= f.submit "登録する" %>
+    <% end %>
+  </div>
+</div>
